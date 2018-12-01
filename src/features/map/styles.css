@@ -1,0 +1,17 @@
+.tile {
+  display: inline-flex;
+  background-color: #42b842;
+  color: #42b842; /* hides the dot for the map glitch */
+}
+
+.rock {
+  background-image: url('/tiles/rock.png')
+}
+
+.tree {
+  background-image: url('/tiles/tree.png')
+}
+
+.chest {
+  background-image: url('/tiles/chest.png')
+}
