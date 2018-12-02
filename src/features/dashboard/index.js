@@ -1,4 +1,5 @@
 import React from 'react'
+import Messages from '../messages'
 
 function Dashboard(props) {
   //
@@ -9,6 +10,7 @@ function Dashboard(props) {
   return (
     <div
       style = {{
+        padding: '4px',
         border: '4px solid white',
         top: '100px',
         left: '5px',
@@ -19,6 +21,7 @@ function Dashboard(props) {
         backgroundColor: 'brown'
       }}
     >
+    <Messages />
     </div>
   )
 }
