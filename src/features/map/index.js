@@ -2,13 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../../config/constants'
 import './styles.css'
+import handleInteraction from './interaction'
+import store from '../../config/store'
+
 
 function getTileSprite(type) {
   switch(type) {
     case 0:
       return 'grass'
     case 2:
-      return 'chest'
+      return 'dragon-egg'
     case 3:
       return 'tree'
     case 5:
@@ -64,8 +67,8 @@ function Map(props) {
 
 function mapStateToProps(state) {
   return {
-    tiles: state.map.tiles
+    tiles: store.getState().map.tiles
   }
 }
 
-export default connect(mapStateToProps)(Map)
+export default connect(mapStateToProps)(handleInteraction(Map))

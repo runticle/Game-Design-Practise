@@ -90,7 +90,6 @@ export default function handleMovement(player) {
     }
   }
 
-
   window.addEventListener('keydown', (e) => {
     handleKeydown(e)
   })
