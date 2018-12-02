@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../../config/constants'
 import './styles.css'
-import handleInteraction from './interaction'
+import handleCollect from './collect'
+import handleInteract from './interact'
 import store from '../../config/store'
 
 
@@ -71,4 +72,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(handleInteraction(Map))
+export default connect(mapStateToProps)(handleCollect(handleInteract(Map)))

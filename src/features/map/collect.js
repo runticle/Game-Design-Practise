@@ -1,9 +1,9 @@
 import store from '../../config/store'
 import { SPRITE_SIZE } from '../../config/constants'
 
-export default function handleInteraction(map) {
+export default function handleCollect(map) {
 
-  function dispatchInteraction(pos) {
+  function dispatchCollect(pos) {
     const state = store.getState()
     const tiles = state.map.tiles
     alert("You found a egg!")
@@ -27,7 +27,7 @@ export default function handleInteraction(map) {
     })
   }
 
-  function observeInteraction(pos) {
+  function observeCollect(pos) {
     const tiles = store.getState().map.tiles
     const y = pos[1] / SPRITE_SIZE
     const x = pos[0] / SPRITE_SIZE
@@ -35,11 +35,11 @@ export default function handleInteraction(map) {
     return tile === 2
   }
 
-  function attemptInteraction() {
+  function attemptCollect() {
     const pos = store.getState().player.position
 
-    if(observeInteraction(pos))
-      dispatchInteraction(pos)
+    if(observeCollect(pos))
+      dispatchCollect(pos)
 
   }
 
@@ -48,7 +48,7 @@ export default function handleInteraction(map) {
 
     switch(e.keyCode) {
       case 69:
-        return attemptInteraction()
+        return attemptCollect()
 
       default:
         console.log(e.keyCode)
