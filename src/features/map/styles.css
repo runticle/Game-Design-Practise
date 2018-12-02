@@ -12,6 +12,7 @@
   background-image: url('/tiles/dragon-egg.png');
   background-size: 20px;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .tree {
@@ -20,4 +21,11 @@
 
 .chest {
   background-image: url('/tiles/chest.png')
+}
+
+.player {
+  background-position: center;
+  background-image: url('/tiles/player.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
 }
