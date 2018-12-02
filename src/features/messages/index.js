@@ -1,7 +1,8 @@
 import React from 'react'
+import store from '../../config/store'
+import { connect } from 'react-redux'
 
 function Messages(props) {
-
 
   return (
     <div style = {{
@@ -13,7 +14,7 @@ function Messages(props) {
       borderLeft: '1px solid white',
       backgroundColor: "grey"
     }}>
-      This is a message!
+      {props.messages}
     </div>
   )
 

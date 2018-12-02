@@ -4,7 +4,10 @@ import { SPRITE_SIZE } from '../../config/constants'
 export default function handleInteract(map) {
 
   function dispatchInteract(pos) {
-    alert('hello mate!')
+      store.dispatch({ type: 'UPLOAD_MESSAGE', payload: {
+        messages: "some of these trees aren't what they seem!"
+      }
+    })
   }
 
   function notOnEdgeOfMap(pos) {

@@ -6,11 +6,16 @@ export default function handleCollect(map) {
   function dispatchCollect(pos) {
     const state = store.getState()
     const tiles = state.map.tiles
-    alert("You found a egg!")
+    store.dispatch ({
+      type: 'UPLOAD_MESSAGE',
+      payload: {
+        messages: "You found an egg!"
+      }
+    })
     store.dispatch ({
       type: 'UPDATE_TILES',
       payload: {
-        tiles: getNewMap(tiles, pos) //updates store but map doesn't rerender
+        tiles: getNewMap(tiles, pos)
       }
     })
   }

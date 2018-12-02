@@ -2,10 +2,12 @@
 import { createStore, combineReducers } from 'redux'
 import playerReducer from '../features/player/reducer'
 import mapReducer from '../features/map/reducer'
+import dashboardReducer from '../features/dashboard/reducer'
 
 const rootReducer = combineReducers({
   player: playerReducer,
-  map: mapReducer
+  map: mapReducer,
+  dashboard: dashboardReducer
 })
 
 const store = createStore(

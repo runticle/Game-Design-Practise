@@ -1,11 +1,9 @@
 import React from 'react'
 import Messages from '../messages'
+import store from '../../config/store'
+import {connect} from 'react-redux'
 
 function Dashboard(props) {
-  //
-  // store.dispatch({ type: 'ADD_TILES', payload: {
-  //   tiles: store.getState().map.tiles,
-  // }})
 
   return (
     <div
@@ -21,9 +19,16 @@ function Dashboard(props) {
         backgroundColor: 'brown'
       }}
     >
-    <Messages />
+    <Messages
+    messages={props.messages} />
     </div>
   )
 }
 
-export default Dashboard
+function mapStateToProps(state) {
+  return {
+    messages: store.getState().dashboard.messages
+  }
+}
+
+export default connect(mapStateToProps)(Dashboard)
