@@ -19,9 +19,9 @@ export default function handleCollect(map) {
     const y = pos[1] / SPRITE_SIZE
     const x = pos[0] / SPRITE_SIZE
     return tiles.map((row, index) => {
-      if(index != y) { return row }
+      if(index !== y) { return row }
       return row.map((tile, index) => {
-        if(index != x) { return tile }
+        if(index !== x) { return tile }
         return 0
       })
     })
@@ -51,7 +51,7 @@ export default function handleCollect(map) {
         return attemptCollect()
 
       default:
-        console.log(e.keyCode)
+        return null
     }
   }
 
