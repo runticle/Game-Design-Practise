@@ -29,3 +29,12 @@
   background-size: 20px;
   background-repeat: no-repeat;
 }
+
+.oldman {
+  background-position: center;
+  background-image: url('/tiles/oldman.png');
+  background-size: 50px;
+  background-repeat: no-repeat;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

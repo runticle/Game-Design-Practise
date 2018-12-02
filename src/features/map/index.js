@@ -21,6 +21,8 @@ function getTileSprite(type) {
       return 'tree'
     case 7:
       return 'player'
+    case 8:
+      return 'oldman'
     default:
       return null
   }

@@ -6,8 +6,9 @@ Highly recommend.
 
 
 
-# Future features
+# Notes
 
-- Sound
-- More tiles 
-- Actions on tiles ie. open chest
+message index so different people release different messages
+sound
+send eggs to dashboard
+axe
