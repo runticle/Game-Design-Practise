@@ -44,7 +44,7 @@ function MapRow(props) {
   return (
     <div className='row'>
       {
-        props.tiles.map( tile => <MapTile tile={tile} />)
+        props.tiles.map( (tile,i) => <MapTile tile={tile} />)
       }
     </div>
   )
