@@ -51,6 +51,15 @@ export function getInteractablePositions(pos) {
 
 // REDUCER CALLS
 
+export function dispatchStoreVisibility(status) {
+  store.dispatch ({
+    type: 'SHOW_STORE',
+    payload: {
+      shopVisibility: status
+    }
+  })
+}
+
 export function dispatchAddRubies() {
   store.dispatch ({
     type: 'ADD_RUBY',
