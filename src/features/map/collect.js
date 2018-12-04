@@ -6,26 +6,28 @@ export default function handleCollect(map) {
   function dispatchCollect(pos) {
     const state = store.getState()
     const tiles = state.map.tiles
-    const inventory = state.dashboard.inventory
-    inventory.push(2)
 
-    console.log(state.dashboard.inventory)
+    //set success message
     store.dispatch ({
       type: 'SET_MESSAGE',
       payload: {
         messageIndex: 1
       }
     })
+
+    //update map without item
     store.dispatch ({
       type: 'UPDATE_TILES',
       payload: {
         tiles: getNewMap(tiles, pos)
       }
     })
+
+    //add item to inventory
     store.dispatch ({
       type: 'SEND_TO_INVENTORY',
       payload: {
-        inventory: inventory
+        inventory: 2
       }
     })
   }
