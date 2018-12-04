@@ -1,5 +1,5 @@
 import store from '../../config/store'
-import { getInteractablePositions, notOnEdgeOfMap, observeCollect, dispatchMessage, dispatchUpdatedTiles,dispatchAddRubies, dispatchAddToInventory} from './interaction_functions'
+import { getInteractablePositions, attemptInteract, observeInteract, notOnEdgeOfMap, observeCollect, dispatchMessage, dispatchUpdatedTiles,dispatchAddRubies, dispatchAddToInventory} from './interaction_functions'
 
 export default function handleInteract(map) {
 
@@ -16,31 +16,6 @@ export default function handleInteract(map) {
         dispatchAddRubies()
         dispatchUpdatedTiles(pos, 1)
       }
-  }
-
-  function observeInteract(pos) {
-    const tiles = store.getState().map.tiles
-    const interactablePos = getInteractablePositions(pos)
-
-    var interactable = function(pos) {
-      const tile = tiles[pos[0]][pos[1]]
-
-      if(tile === 7) {
-        dispatchMessage(2)
-      }
-      if(tile === 8) {
-        dispatchMessage(3)
-        dispatchAddToInventory(10)
-      }
-    }
-    interactablePos.some(interactable)
-  }
-
-  function attemptInteract() {
-    const pos = store.getState().player.position
-
-    if(!notOnEdgeOfMap(pos))
-      observeInteract(pos)
   }
 
   function handleKeydown(e) {

@@ -1,6 +1,14 @@
 import { SPRITE_SIZE } from '../../config/constants'
 import store from '../../config/store'
 
+
+export function attemptInteract() {
+  const pos = store.getState().player.position
+
+  if(!notOnEdgeOfMap(pos))
+    observeInteract(pos)
+}
+
 export function getNewMap(itemPos, newSpriteIndex) {
   const tiles = store.getState().map.tiles
   //get item position x / y
@@ -14,6 +22,29 @@ export function getNewMap(itemPos, newSpriteIndex) {
       return newSpriteIndex
     })
   })
+}
+
+export function observeInteract(pos) {
+  const tiles = store.getState().map.tiles
+  const interactablePos = getInteractablePositions(pos)
+
+  var interactable = function(pos) {
+    const tile = tiles[pos[0]][pos[1]]
+
+    if(tile === 7) {
+      dispatchMessage(2)
+    }
+    if(tile === 8) {
+      dispatchMessage(3)
+      dispatchAddToInventory(10)
+    }
+    if(tile === 20) {
+      dispatchMessage(4)
+      dispatchStoreVisibility( '' )
+    }
+
+  }
+  interactablePos.some(interactable)
 }
 
 export function observeCollect(itemIndex) {
