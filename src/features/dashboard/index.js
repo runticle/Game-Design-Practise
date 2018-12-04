@@ -5,6 +5,16 @@ import store from '../../config/store'
 import {connect} from 'react-redux'
 import {MESSAGES} from '../../config/constants'
 
+// function sortInventory(inventory) {
+//   const newInventory = {}
+//   console.log(inventory)
+//   inventory.forEach(function(item) {
+//     newInventory[item] += 1
+//   })
+//   console.log(newInventory)
+//   return inventory
+// }
+
 function Dashboard(props) {
 
   return (

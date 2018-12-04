@@ -3,6 +3,18 @@ import { SPRITE_SIZE } from '../../config/constants'
 
 export default function handleInteract(map) {
 
+
+// not DRY !! dispatchCollect in collect.js
+  function dispatchCollect() {
+    // give axe to player
+    store.dispatch({
+      type: 'SEND_TO_INVENTORY',
+      payload: {
+        inventory: 10
+      }
+    })
+  }
+
   function dispatchMessageIndex(index) {
     store.dispatch({
       type: 'SET_MESSAGE',
@@ -32,12 +44,15 @@ export default function handleInteract(map) {
       [yPos, xPos - 1],
     ]
     var interactable = function(pos) {
+      // if wizard man
       if(tiles[pos[0]][pos[1]] === 7) {
         dispatchMessageIndex(2)
         return true
       }
+      // if old man
       if(tiles[pos[0]][pos[1]] === 8) {
         dispatchMessageIndex(3)
+        dispatchCollect(10)
         return true
       }
     }

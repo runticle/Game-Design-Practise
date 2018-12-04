@@ -14,7 +14,6 @@ export default function handleCollect(map) {
         messageIndex: 1
       }
     })
-
     //update map without item
     store.dispatch ({
       type: 'UPDATE_TILES',
@@ -22,7 +21,6 @@ export default function handleCollect(map) {
         tiles: getNewMap(tiles, pos)
       }
     })
-
     //add item to inventory
     store.dispatch ({
       type: 'SEND_TO_INVENTORY',
