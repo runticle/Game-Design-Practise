@@ -11,6 +11,8 @@ function getTileSprite(type) {
   switch(type) {
     case 0:
       return 'grass'
+    case 1:
+      return 'dirt'
     case 2:
       return 'dragon-egg'
     case 3:
@@ -54,6 +56,7 @@ function Map(props) {
 
   return (
     <div
+      className="map_background"
       style = {{
         position: 'relative',
         top: '0px',

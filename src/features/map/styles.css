@@ -1,11 +1,28 @@
 .tile {
   display: inline-flex;
-  background-color: #42b842;
-  color: #42b842; /* hides the dot for the map glitch */
+}
+
+.map_background {
+  background-image: url('/tiles/grass.png');
+  background-size: 40px;
+}
+
+.dirt {
+  background-image: url('/tiles/dirt.png');
+  background-size: 20px;
+  border-radius: 40px;
+  color: brown;
+}
+
+.grass {
+  background-image: url('/tiles/grass.png');
+  background-size: 40px;
+  color: inherit;
 }
 
 .rock {
-  background-image: url('/tiles/rock.png')
+  background-image: url('/tiles/rock.png');
+
 }
 
 .dragon-egg {
