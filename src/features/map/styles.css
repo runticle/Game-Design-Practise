@@ -7,6 +7,12 @@
   background-size: 40px;
 }
 
+.muxworthys {
+  background-image: url('/tiles/muxworthys.png');
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+
 .dirt {
   background-image: url('/tiles/dirt.png');
   background-size: 20px;
