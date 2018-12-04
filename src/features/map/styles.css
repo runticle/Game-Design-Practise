@@ -30,6 +30,13 @@
   background-repeat: no-repeat;
 }
 
+.axe {
+  background-position: center;
+  background-image: url('/tiles/axe.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
 .oldman {
   background-position: center;
   background-image: url('/tiles/oldman.png');
