@@ -1,7 +1,7 @@
 import { SPRITE_SIZE } from '../../config/constants'
 import store from '../../config/store'
 
-export function getNewMap(itemPos) {
+export function getNewMap(itemPos, newSpriteIndex) {
   const tiles = store.getState().map.tiles
   //get item position x / y
   const y = itemPos[1] / SPRITE_SIZE
@@ -11,7 +11,7 @@ export function getNewMap(itemPos) {
     if(index !== y) { return row }
     return row.map((tile, index) => {
       if(index !== x) { return tile }
-      return 0
+      return newSpriteIndex
     })
   })
 }
@@ -51,11 +51,11 @@ export function getInteractablePositions(pos) {
 
 // REDUCER CALLS
 
-export function dispatchUpdatedTiles(itemPos) {
+export function dispatchUpdatedTiles(itemPos, newSpriteIndex) {
   store.dispatch ({
     type: 'UPDATE_TILES',
     payload: {
-      tiles: getNewMap(itemPos)
+      tiles: getNewMap(itemPos, newSpriteIndex)
     }
   })
 }

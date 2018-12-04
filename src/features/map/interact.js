@@ -14,7 +14,7 @@ export default function handleInteract(map) {
 
     if(observeCollect(0) && playerHasSpade()) {
         dispatchAddToInventory(11)
-        dispatchUpdatedTiles(pos)
+        dispatchUpdatedTiles(pos, 1)
       }
   }
 

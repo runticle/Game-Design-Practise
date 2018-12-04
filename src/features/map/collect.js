@@ -7,7 +7,7 @@ export default function handleCollect(map) {
     const itemPos = store.getState().player.position
 
     if(observeCollect(2)) {
-        dispatchUpdatedTiles(itemPos)
+        dispatchUpdatedTiles(itemPos, 0)
         dispatchAddToInventory(2)
         dispatchMessage(1)
     }
