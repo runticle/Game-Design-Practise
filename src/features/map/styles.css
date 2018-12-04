@@ -37,6 +37,13 @@
   background-repeat: no-repeat;
 }
 
+.ruby {
+  background-position: center;
+  background-image: url('/tiles/ruby.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
 .oldman {
   background-position: center;
   background-image: url('/tiles/oldman.png');
