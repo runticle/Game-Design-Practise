@@ -14,7 +14,7 @@ function Messages(props) {
       borderLeft: '1px solid white',
       backgroundColor: "grey"
     }}>
-      {props.messages}
+      {props.message}
     </div>
   )
 

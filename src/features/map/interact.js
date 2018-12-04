@@ -1,13 +1,14 @@
 import store from '../../config/store'
-import { SPRITE_SIZE } from '../../config/constants'
+import { SPRITE_SIZE, MESSAGES } from '../../config/constants'
 
 export default function handleInteract(map) {
 
-  function dispatchInteract(pos) {
-      store.dispatch({ type: 'UPLOAD_MESSAGE', payload: {
-        messages: "some of these trees aren't what they seem!"
-      }
-    })
+  function dispatchMessageIndex(index) {
+    store.dispatch({
+      type: 'SET_MESSAGE',
+      payload: {
+        messageIndex: index
+    }})
   }
 
   function notOnEdgeOfMap(pos) {
@@ -31,7 +32,14 @@ export default function handleInteract(map) {
       [yPos, xPos - 1],
     ]
     var interactable = function(pos) {
-      return tiles[pos[0]][pos[1]] === 7
+      if(tiles[pos[0]][pos[1]] === 7) {
+        dispatchMessageIndex(2)
+        return true
+      }
+      if(tiles[pos[0]][pos[1]] === 8) {
+        dispatchMessageIndex(3)
+        return true
+      }
     }
     return interactablePos.some(interactable)
   }
@@ -39,8 +47,8 @@ export default function handleInteract(map) {
   function attemptInteract() {
     const pos = store.getState().player.position
 
-    if(!notOnEdgeOfMap(pos) && observeInteract(pos))
-      dispatchInteract(pos)
+    if(!notOnEdgeOfMap(pos))
+      observeInteract(pos)
 
   }
 

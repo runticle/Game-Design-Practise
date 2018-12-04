@@ -2,6 +2,7 @@ import React from 'react'
 import Messages from '../messages'
 import store from '../../config/store'
 import {connect} from 'react-redux'
+import {MESSAGES} from '../../config/constants'
 
 function Dashboard(props) {
 
@@ -20,14 +21,14 @@ function Dashboard(props) {
       }}
     >
     <Messages
-    messages={props.messages} />
+    message={MESSAGES[props.messageIndex]} />
     </div>
   )
 }
 
 function mapStateToProps(state) {
   return {
-    messages: store.getState().dashboard.messages
+    messageIndex: store.getState().dashboard.messageIndex
   }
 }
 

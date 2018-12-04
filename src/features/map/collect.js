@@ -7,9 +7,9 @@ export default function handleCollect(map) {
     const state = store.getState()
     const tiles = state.map.tiles
     store.dispatch ({
-      type: 'UPLOAD_MESSAGE',
+      type: 'SET_MESSAGE',
       payload: {
-        messages: "You found an egg!"
+        messageIndex: 1
       }
     })
     store.dispatch ({

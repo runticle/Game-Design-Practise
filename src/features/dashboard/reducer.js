@@ -1,10 +1,10 @@
 const initialState = {
-  messages: "Use 'e' to pick up eggs and 'q' to talk to people!"
+  messageIndex: 0
 }
 
 const dashboardReducer = (state = initialState, action ) => {
   switch(action.type) {
-    case 'UPLOAD_MESSAGE':
+    case 'SET_MESSAGE':
       return {
         ...action.payload
       }
