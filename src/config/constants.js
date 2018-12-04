@@ -5,6 +5,6 @@ export const MAP_WIDTH = SPRITE_SIZE * 20
 export const MESSAGES = [
   "Use 'e' to pick up eggs and 'q' to talk to people!",
   "You found an egg!",
-  "some of these trees aren't what they seem!",
+  "walk through the trees here mate!",
   "hello! I'm old man"
 ]
