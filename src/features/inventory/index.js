@@ -1,11 +1,13 @@
 import React from 'react'
+import store from '../../config/store'
 import { SPRITE_SIZE } from '../../config/constants'
-
 
 function getItemSprite(type) {
   switch(type) {
     case 2:
       return 'dragon-egg'
+    case 10:
+      return 'axe'
     default:
       return null
   }
