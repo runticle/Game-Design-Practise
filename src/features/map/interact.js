@@ -1,5 +1,5 @@
 import store from '../../config/store'
-import { getInteractablePositions, notOnEdgeOfMap, observeCollect, dispatchMessage, dispatchUpdatedTiles, dispatchAddToInventory} from './interaction_functions'
+import { getInteractablePositions, notOnEdgeOfMap, observeCollect, dispatchMessage, dispatchUpdatedTiles,dispatchAddRubies, dispatchAddToInventory} from './interaction_functions'
 
 export default function handleInteract(map) {
 
@@ -13,7 +13,7 @@ export default function handleInteract(map) {
     const pos = store.getState().player.position
 
     if(observeCollect(0) && playerHasSpade()) {
-        dispatchAddToInventory(11)
+        dispatchAddRubies()
         dispatchUpdatedTiles(pos, 1)
       }
   }

@@ -1,6 +1,7 @@
 const initialState = {
   messageIndex: 0,
-  inventory: []
+  inventory: [],
+  rubies: 0
 }
 
 const dashboardReducer = (state = initialState, action ) => {
@@ -11,6 +12,8 @@ const dashboardReducer = (state = initialState, action ) => {
     case 'SEND_TO_INVENTORY':
         const newInv = action.payload.inventory
         return { ...state, inventory: state.inventory.concat(newInv) }
+    case 'ADD_RUBY':
+        return { ...state, rubies: state.rubies + 1 }
     default:
       return state
   }

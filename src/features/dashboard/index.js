@@ -5,15 +5,25 @@ import store from '../../config/store'
 import {connect} from 'react-redux'
 import {MESSAGES} from '../../config/constants'
 
-// function sortInventory(inventory) {
-//   const newInventory = {}
-//   console.log(inventory)
-//   inventory.forEach(function(item) {
-//     newInventory[item] += 1
-//   })
-//   console.log(newInventory)
-//   return inventory
-// }
+function Rubies(props) {
+
+  return (
+    <div
+    className='ruby'
+    style = {{
+      float: 'left',
+      color: 'white',
+      fontSize: '1em',
+      width: '5%',
+      height: '80%',
+      paddingTop: '15px',
+      textAlign: 'center'
+    }}>
+      {props.rubies}
+    </div>
+  )
+
+}
 
 function Dashboard(props) {
 
@@ -30,6 +40,8 @@ function Dashboard(props) {
         margin: '0 auto',
       }}
     >
+    <Rubies
+    rubies= { props.rubies } />
     <Inventory
     inventory={props.inventory} />
     <Messages
@@ -41,7 +53,8 @@ function Dashboard(props) {
 function mapStateToProps(state) {
   return {
     messageIndex: store.getState().dashboard.messageIndex,
-    inventory: store.getState().dashboard.inventory
+    inventory: store.getState().dashboard.inventory,
+    rubies: store.getState().dashboard.rubies
   }
 }
 

@@ -37,7 +37,7 @@ function Inventory(props) {
       style = {{
         float: 'left',
         color: 'white',
-        width: '67%',
+        width: '60%',
         height: '80%',
         padding: '5px',
         overflow: 'hidden',

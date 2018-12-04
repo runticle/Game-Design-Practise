@@ -51,6 +51,15 @@ export function getInteractablePositions(pos) {
 
 // REDUCER CALLS
 
+export function dispatchAddRubies() {
+  store.dispatch ({
+    type: 'ADD_RUBY',
+    payload: {
+      rubies: 1
+    }
+  })
+}
+
 export function dispatchUpdatedTiles(itemPos, newSpriteIndex) {
   store.dispatch ({
     type: 'UPDATE_TILES',
