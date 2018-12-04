@@ -3,10 +3,16 @@ import { getInteractablePositions, notOnEdgeOfMap, observeCollect, dispatchMessa
 
 export default function handleInteract(map) {
 
+  function playerHasSpade() {
+    const inventory = store.getState().dashboard.inventory
+
+    return inventory.includes(10)
+  }
+
   function attemptDig() {
     const pos = store.getState().player.position
 
-    if(observeCollect(0)) {
+    if(observeCollect(0) && playerHasSpade()) {
         dispatchAddToInventory(11)
         dispatchUpdatedTiles(pos)
       }
@@ -27,7 +33,7 @@ export default function handleInteract(map) {
         dispatchAddToInventory(10)
       }
     }
-    return interactablePos.some(interactable)
+    interactablePos.some(interactable)
   }
 
   function attemptInteract() {
