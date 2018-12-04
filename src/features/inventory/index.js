@@ -1,13 +1,16 @@
 import React from 'react'
-import store from '../../config/store'
 import { SPRITE_SIZE } from '../../config/constants'
 
 function getItemSprite(type) {
   switch(type) {
     case 2:
       return 'dragon-egg'
+    case 6:
+      return 'tree'
     case 10:
       return 'axe'
+    case 11:
+      return 'ruby'
     default:
       return null
   }
@@ -38,7 +41,7 @@ function Inventory(props) {
         height: '80%',
         padding: '5px',
         overflow: 'hidden',
-        backgroundColor: "brown"
+        backgroundColor: "black"
     }}
     >
       {

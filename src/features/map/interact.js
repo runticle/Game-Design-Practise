@@ -1,56 +1,30 @@
 import store from '../../config/store'
-import { SPRITE_SIZE } from '../../config/constants'
+import { getInteractablePositions, notOnEdgeOfMap, observeCollect, dispatchMessage, dispatchUpdatedTiles, dispatchAddToInventory} from './interaction_functions'
 
 export default function handleInteract(map) {
 
-// not DRY !! dispatchCollect in collect.js
-  function dispatchCollect() {
-    // give axe to player
-    store.dispatch({
-      type: 'SEND_TO_INVENTORY',
-      payload: {
-        inventory: 10
+  function attemptDig() {
+    const pos = store.getState().player.position
+
+    if(observeCollect(0)) {
+        dispatchAddToInventory(11)
+        dispatchUpdatedTiles(pos)
       }
-    })
-  }
-
-  function dispatchMessageIndex(index) {
-    store.dispatch({
-      type: 'SET_MESSAGE',
-      payload: {
-        messageIndex: index
-    }})
-  }
-
-  function notOnEdgeOfMap(pos) {
-    console.log(pos[1] / SPRITE_SIZE)
-    return(pos[1] / SPRITE_SIZE === 0 ||
-            pos[1] / SPRITE_SIZE === 11 ||
-            pos[0] / SPRITE_SIZE === 0 ||
-            pos[0] / SPRITE_SIZE === 19)
-
   }
 
   function observeInteract(pos) {
     const tiles = store.getState().map.tiles
-    const xPos = pos[0] / SPRITE_SIZE
-    const yPos = pos[1] / SPRITE_SIZE
-    const interactablePos = [
-      [yPos, xPos],
-      [yPos + 1, xPos],
-      [yPos, xPos + 1],
-      [yPos - 1, xPos],
-      [yPos, xPos - 1],
-    ]
+    const interactablePos = getInteractablePositions(pos)
+
     var interactable = function(pos) {
-      // if wizard man
-      if(tiles[pos[0]][pos[1]] === 7) {
-        dispatchMessageIndex(2)
+      const tile = tiles[pos[0]][pos[1]]
+
+      if(tile === 7) {
+        dispatchMessage(2)
       }
-      // if old man
-      if(tiles[pos[0]][pos[1]] === 8) {
-        dispatchMessageIndex(3)
-        dispatchCollect(10)
+      if(tile === 8) {
+        dispatchMessage(3)
+        dispatchAddToInventory(10)
       }
     }
     return interactablePos.some(interactable)
@@ -69,6 +43,8 @@ export default function handleInteract(map) {
     switch(e.keyCode) {
       case 81:
         return attemptInteract()
+      case 87:
+        return attemptDig()
 
       default:
         return null
