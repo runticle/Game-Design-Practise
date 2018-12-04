@@ -28,7 +28,8 @@ function Dashboard(props) {
 
 function mapStateToProps(state) {
   return {
-    messageIndex: store.getState().dashboard.messageIndex
+    messageIndex: store.getState().dashboard.messageIndex,
+    inventory: store.getState().dashboard.inventory
   }
 }
 
