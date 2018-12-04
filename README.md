@@ -4,7 +4,7 @@ A simple 2D RPG game inspired from the video series found: https://www.youtube.c
 
 # Notes
 
-- message index so different people release different messages
+- message index so different people release different messages ☑️
 - sound
 - send eggs to dashboard
 - axe to chop trees
