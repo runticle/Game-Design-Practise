@@ -3,7 +3,6 @@ import { SPRITE_SIZE } from '../../config/constants'
 
 export default function handleInteract(map) {
 
-
 // not DRY !! dispatchCollect in collect.js
   function dispatchCollect() {
     // give axe to player
@@ -47,13 +46,11 @@ export default function handleInteract(map) {
       // if wizard man
       if(tiles[pos[0]][pos[1]] === 7) {
         dispatchMessageIndex(2)
-        return true
       }
       // if old man
       if(tiles[pos[0]][pos[1]] === 8) {
         dispatchMessageIndex(3)
         dispatchCollect(10)
-        return true
       }
     }
     return interactablePos.some(interactable)
@@ -64,7 +61,6 @@ export default function handleInteract(map) {
 
     if(!notOnEdgeOfMap(pos))
       observeInteract(pos)
-
   }
 
   function handleKeydown(e) {
