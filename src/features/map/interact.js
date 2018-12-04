@@ -1,5 +1,5 @@
 import store from '../../config/store'
-import { SPRITE_SIZE, MESSAGES } from '../../config/constants'
+import { SPRITE_SIZE } from '../../config/constants'
 
 export default function handleInteract(map) {
 

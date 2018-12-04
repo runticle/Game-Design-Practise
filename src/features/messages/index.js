@@ -1,6 +1,4 @@
 import React from 'react'
-import store from '../../config/store'
-import { connect } from 'react-redux'
 
 function Messages(props) {
 
@@ -11,7 +9,6 @@ function Messages(props) {
       width: '30%',
       height: '80%',
       padding: '5px',
-      borderLeft: '1px solid white',
       backgroundColor: "grey"
     }}>
       {props.message}

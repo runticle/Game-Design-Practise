@@ -1,5 +1,6 @@
 import React from 'react'
 import Messages from '../messages'
+import Inventory from '../inventory'
 import store from '../../config/store'
 import {connect} from 'react-redux'
 import {MESSAGES} from '../../config/constants'
@@ -17,9 +18,10 @@ function Dashboard(props) {
         width: '800px',
         height: '50px',
         margin: '0 auto',
-        backgroundColor: 'brown'
       }}
     >
+    <Inventory
+    inventory={props.inventory} />
     <Messages
     message={MESSAGES[props.messageIndex]} />
     </div>
