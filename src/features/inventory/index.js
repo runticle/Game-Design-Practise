@@ -8,7 +8,7 @@ function getItemSprite(type) {
     case 6:
       return 'tree'
     case 10:
-      return 'axe'
+      return 'spade'
     case 11:
       return 'ruby'
     default:
