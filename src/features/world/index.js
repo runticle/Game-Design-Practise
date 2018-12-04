@@ -1,6 +1,7 @@
 import React from 'react'
 import Player from '../player'
 import Map from '../map'
+import Shop from '../shop'
 import store from '../../config/store'
 
 function World(props) {
@@ -13,12 +14,13 @@ function World(props) {
       style = {{
         position: 'relative',
         width: '800px',
-        height: '400px',
+        height: '480px',
         margin: '20px auto'
       }}
     >
       <Map />
       <Player />
+      <Shop />
     </div>
   )
 }
