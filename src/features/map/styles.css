@@ -53,6 +53,13 @@
   background-repeat: no-repeat;
 }
 
+.player {
+  background-position: center;
+  background-image: url('/tiles/player.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
 .spade {
   background-position: center;
   background-image: url('/tiles/spade.png');
