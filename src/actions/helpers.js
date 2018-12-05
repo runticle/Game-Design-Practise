@@ -1,5 +1,6 @@
-import { SPRITE_SIZE } from '../../config/constants'
-import store from '../../config/store'
+import { SPRITE_SIZE } from '../config/constants'
+import store from '../config/store'
+import { dispatchMessage, dispatchAddToInventory, dispatchStoreVisibility} from './actions'
 
 
 export function attemptInteract() {
@@ -75,54 +76,4 @@ export function getInteractablePositions(pos) {
     [yPos - 1, xPos],
     [yPos, xPos - 1],
   ]
-}
-
-
-
-
-// REDUCER CALLS
-
-export function dispatchStoreVisibility(status) {
-  store.dispatch ({
-    type: 'SHOW_STORE',
-    payload: {
-      shopVisibility: status
-    }
-  })
-}
-
-export function dispatchAddRubies() {
-  store.dispatch ({
-    type: 'ADD_RUBY',
-    payload: {
-      rubies: 1
-    }
-  })
-}
-
-export function dispatchUpdatedTiles(itemPos, newSpriteIndex) {
-  store.dispatch ({
-    type: 'UPDATE_TILES',
-    payload: {
-      tiles: getNewMap(itemPos, newSpriteIndex)
-    }
-  })
-}
-
-export function dispatchMessage(messageIndex) {
-  store.dispatch ({
-    type: 'SET_MESSAGE',
-    payload: {
-      messageIndex: messageIndex
-    }
-  })
-}
-
-export function dispatchAddToInventory(itemIndex) {
-  store.dispatch ({
-    type: 'SEND_TO_INVENTORY',
-    payload: {
-      inventory: itemIndex
-    }
-  })
 }
