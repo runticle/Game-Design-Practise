@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import oldman from './oldman.png'
+import { setPosition } from './position'
+
 
 function Oldman(props) {
 
@@ -8,8 +10,8 @@ function Oldman(props) {
       <div
         style= {{
           position: 'absolute',
-          top: '120px',
-          left: '120px',
+          top: props.position[1],
+          left: props.position[0],
           backgroundImage: `url('${oldman}')`,
           backgroundSize: '40px',
           backgroundRepeat: 'no-repeat',
@@ -28,4 +30,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Oldman)
+export default connect(mapStateToProps)(setPosition(Oldman))
