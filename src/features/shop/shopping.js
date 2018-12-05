@@ -1,6 +1,4 @@
-import store from '../../config/store'
-import { notOnEdgeOfMap, attemptInteract, dispatchStoreVisibility, observeInteract, getInteractablePositions, dispatchMessage } from '../map/interaction_functions'
-
+import {dispatchStoreVisibility } from '../../actions/actions'
 export default function handleShopping(shop) {
 
   function handleKeydown(e) {

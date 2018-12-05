@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import handleShopping from './shopping'
-import { dispatchStoreVisibility } from '../map/interaction_functions'
 
 function Shop(props) {
 

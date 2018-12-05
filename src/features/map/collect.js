@@ -1,6 +1,6 @@
 import store from '../../config/store'
-import { observeCollect, dispatchAddToInventory, dispatchMessage, dispatchUpdatedTiles} from './interaction_functions'
-
+import { observeCollect } from '../../actions/helpers'
+import { dispatchAddToInventory, dispatchMessage, dispatchUpdatedTiles } from '../../actions/actions'
 export default function handleCollect(map) {
 
   function attemptCollect() {

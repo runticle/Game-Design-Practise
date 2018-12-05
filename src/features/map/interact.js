@@ -1,5 +1,6 @@
 import store from '../../config/store'
-import { getInteractablePositions, attemptInteract, observeInteract, notOnEdgeOfMap, observeCollect, dispatchMessage, dispatchUpdatedTiles,dispatchAddRubies, dispatchAddToInventory} from './interaction_functions'
+import { attemptInteract, observeCollect} from '../../actions/helpers'
+import { dispatchUpdatedTiles, dispatchAddRubies } from '../../actions/actions'
 
 export default function handleInteract(map) {
 
