@@ -1,5 +1,6 @@
 import React from 'react'
 import Player from '../player'
+import Oldman from '../oldman'
 import Map from '../map'
 import Shop from '../shop'
 import store from '../../config/store'
@@ -20,6 +21,7 @@ function World(props) {
     >
       <Map />
       <Player />
+      <Oldman />
       <Shop />
     </div>
   )
