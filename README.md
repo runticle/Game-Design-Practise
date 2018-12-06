@@ -7,8 +7,9 @@ A simple 2D RPG game inspired from the video series found: https://www.youtube.c
 - Messages
 - Diggin' Rubies with mans spade
 - find eggs n that
-- inventory 
+- inventory
 
 
 # Notes
-- sound
+
+- Have tested the reducers and tried to test the components but finding it very difficult and angry making 
