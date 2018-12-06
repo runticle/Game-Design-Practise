@@ -54,7 +54,7 @@ function MapRow(props) {
   )
 }
 
-function Map(props) {
+export function Map(props) {
 
   return (
     <div

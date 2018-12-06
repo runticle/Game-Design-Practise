@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Dashboard should render correctly 1`] = `
+<div
+  className="dashboard"
+  style={
+    Object {
+      "border": "4px solid white",
+      "height": "50px",
+      "left": "5px",
+      "margin": "0 auto",
+      "padding": "4px",
+      "position": "relative",
+      "top": "100px",
+      "width": "800px",
+    }
+  }
+>
+  <Rubies />
+  <Inventory />
+  <Messages />
+</div>
+`;

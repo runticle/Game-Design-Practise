@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import walkSprite from './player_walk.png'
 import handleMovement from './movement'
 
-function Player(props) {
+export function Player(props) {
 
     return (
       <div

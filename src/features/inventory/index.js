@@ -29,7 +29,7 @@ function Item(props) {
   )
 }
 
-function Inventory(props) {
+export function Inventory(props) {
 
   return (
     <div

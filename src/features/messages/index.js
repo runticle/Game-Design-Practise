@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Messages(props) {
+export function Messages(props) {
 
   return (
     <div style = {{

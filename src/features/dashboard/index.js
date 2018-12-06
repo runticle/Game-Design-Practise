@@ -5,7 +5,7 @@ import store from '../../config/store'
 import {connect} from 'react-redux'
 import {MESSAGES} from '../../config/constants'
 
-function Rubies(props) {
+export function Rubies(props) {
 
   return (
     <div
@@ -25,10 +25,11 @@ function Rubies(props) {
 
 }
 
-function Dashboard(props) {
+export function Dashboard(props) {
 
   return (
     <div
+      className="dashboard"
       style = {{
         padding: '4px',
         border: '4px solid white',
