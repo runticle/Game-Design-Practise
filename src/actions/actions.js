@@ -20,10 +20,11 @@ export function dispatchAddRubies() {
 }
 
 export function dispatchUpdatedTiles(itemPos, newSpriteIndex) {
+  const newMap = getNewMap(itemPos, newSpriteIndex)
   store.dispatch ({
     type: 'UPDATE_TILES',
     payload: {
-      tiles: getNewMap(itemPos, newSpriteIndex)
+      tiles: newMap
     }
   })
 }
