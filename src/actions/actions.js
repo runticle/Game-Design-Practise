@@ -1,6 +1,15 @@
 import store from '../config/store'
 import { getNewMap } from './helpers'
 
+export function dispatchStockShop(itemIndex) {
+  store.dispatch ({
+    type: 'STOCK_SHOP',
+    payload: {
+      shopInventory: itemIndex
+    }
+  })
+}
+
 export function dispatchStoreVisibility(status) {
   store.dispatch ({
     type: 'SHOW_STORE',

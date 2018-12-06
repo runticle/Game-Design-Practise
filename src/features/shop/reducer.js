@@ -8,7 +8,8 @@ const shopReducer = (state = initialState, action ) => {
     case 'SHOW_STORE':
       return { ...state, shopVisibility: action.payload.shopVisibility }
     case 'STOCK_SHOP':
-      return { ...state, shopInventory: action.payload.shopInventory }
+      const newItem = action.payload.shopInventory
+      return { ...state, shopInventory: state.shopInventory.concat(newItem) }
     default:
       return state
   }
