@@ -1,8 +1,6 @@
 import playerReducer from '../features/player/reducer'
 
-
 describe ('player reducer', () => {
-
 
   it('should return the initial state', () => {
     expect((playerReducer(undefined, {}))).toEqual (
