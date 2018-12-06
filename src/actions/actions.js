@@ -1,6 +1,15 @@
 import store from '../config/store'
 import { getNewMap } from './helpers'
 
+export function dispatchStockShop(itemIndex) {
+  store.dispatch ({
+    type: 'STOCK_SHOP',
+    payload: {
+      shopInventory: itemIndex
+    }
+  })
+}
+
 export function dispatchStoreVisibility(status) {
   store.dispatch ({
     type: 'SHOW_STORE',
@@ -20,10 +29,11 @@ export function dispatchAddRubies() {
 }
 
 export function dispatchUpdatedTiles(itemPos, newSpriteIndex) {
+  const newMap = getNewMap(itemPos, newSpriteIndex)
   store.dispatch ({
     type: 'UPDATE_TILES',
     payload: {
-      tiles: getNewMap(itemPos, newSpriteIndex)
+      tiles: newMap
     }
   })
 }
