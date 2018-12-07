@@ -2,6 +2,13 @@
 
 A simple 2D RPG game built in React using Redux. 
 
+Clone repo and run npm start in terminal. Game will pop up on localhost port 3000.
+
+# Tests
+
+- npm test will run tests using jest
+- tests currently only cover reducers and a couple of components 
+
 # Features
 
 - Messages
